@@ -63,7 +63,7 @@ export default function IndépendantExplanation() {
 				</section>
 			</Condition>
 			<InstitutionsPartenaires />
-			{/* <DroitsRetraite /> */}
+			<DroitsRetraite />
 			<DistributionSection>
 				<Distribution />
 			</DistributionSection>
@@ -162,14 +162,6 @@ function DistributionBranch({
 
 function DroitsRetraite() {
 	const { t } = useTranslation()
-	/** Le simulateur ne doit pas faire apparaître les droits à la retraite sur secu-independant.fr */
-	if (
-		!import.meta.env.SSR ||
-		document.referrer?.includes('secu-independants.fr') ||
-		document.referrer?.includes('simulateur-rsi.urssaf.fr')
-	) {
-		return null
-	}
 	return (
 		<Trans i18nKey="pages.simulateurs.indépendant.retraite-droits-acquis">
 			<H3 as="h2">Retraite : droits acquis sur l'année</H3>
