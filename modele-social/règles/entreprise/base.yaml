@@ -459,8 +459,7 @@ entreprise . association non lucrative:
   par défaut: non
   # L'association a but non lucratif ne paie pas d'IS de droit commun article 206 du Code général des impôts
   # -> pas de taxe ni contribution d'apprentissage
-  rend non applicable:
-    - salarié . taxe d'apprentissage
+  rend non applicable: salarié . cotisations . taxe d'apprentissage
 
 entreprise . exonérée de TVA:
   question: L'entreprise est-elle exonérée de TVA (hors franchise de base) ?
@@ -472,34 +471,6 @@ entreprise . exonérée de TVA:
     C'est le cas par exemple des établissements bancaires, financiers ou d'assurance.
   references:
     Fiche economie.gouv.fr: https://www.economie.gouv.fr/entreprises/taxe-salaires
-
-entreprise . taxe sur les salaires . montant avant décote:
-  formule:
-    valeur: salarié . taxe sur les salaires . barème / 1 employé * effectif
-    abattement: abattement associations
-
-entreprise . taxe sur les salaires . abattement associations:
-  applicable si: entreprise . association non lucrative
-  formule: 21044 €/an
-
-entreprise . taxe sur les salaires:
-  applicable si:
-    une de ces conditions:
-      - association non lucrative
-      - entreprise . exonérée de TVA
-  description:
-    Lorsque le montant de la taxe sur les salaires est inférieur à 1200 €/an, il
-    n'y a pas besoin de faire de déclaration et la taxe n'est pas recouvré.
-    Entre 1200 €/an et 2400 €/an une décote s'applique.
-  formule:
-    variations:
-      - si: montant avant décote <= 1200 €/an
-        alors: 0 €/an
-      - si: montant avant décote <= 2400 €/an
-        alors: montant avant décote - (2400 €/an - montant avant décote * 75%)
-      - sinon: montant avant décote
-  références:
-    Fiche service-public: https://www.service-public.fr/professionnels-entreprises/vosdroits/F22576
 
 entreprise . activité:
   titre: nature de l'activité
@@ -675,7 +646,7 @@ entreprise . activité . débit de tabac:
       nom: Non renseignée
       departement:
         nom: Non renseigné
-      taux du versement transport: 1.8
+      taux du versement mobilité: 1.8
 
 établissement . localisation . code commune:
   formule:
@@ -692,12 +663,12 @@ entreprise . activité . débit de tabac:
       data: localisation
       chemin: nom
 
-établissement . taux du versement transport:
+établissement . versement mobilité:
   unité: '%'
   par défaut: oui
   synchronisation:
     data: localisation
-    chemin: taux du versement transport
+    chemin: taux du versement mobilité
 
 établissement . localisation . département:
   formule:

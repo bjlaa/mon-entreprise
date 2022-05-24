@@ -16,7 +16,7 @@ describe('e2e test mon-entreprise api', () => {
 					},
 					expressions: [
 						'contrat salarié . rémunération . net',
-						'contrat salarié . prix du travail',
+						'contrat salarié . total employeur',
 					],
 				})
 				.then((res) => {

@@ -71,7 +71,7 @@ describe('conversation', function () {
 					'salarié . contrat . CDD': 'oui',
 					'salarié . contrat . salaire brut': '2300',
 				})
-				.evaluate('salarié . rémunération . net').missingVariables
+				.evaluate('salarié . rémunération . net . à payer avant impôt').missingVariables
 		)
 
 		expect(result).to.include('salarié . contrat . CDD . motif')

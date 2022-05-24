@@ -79,18 +79,18 @@ const CotisationsSection: Partial<Record<DottedName, Array<string>>> = {
 	'protection sociale . santé': [
 		'dirigeant . indépendant . cotisations et contributions . maladie',
 		'dirigeant . indépendant . cotisations et contributions . indemnités journalières maladie',
-		'dirigeant . indépendant . cotisations et contributions . CSG et CRDS * 5.95 / 9.2',
+		'dirigeant . indépendant . cotisations et contributions . CSG-CRDS * 5.95 / 9.2',
 	],
 	'protection sociale . invalidité et décès': [
 		'dirigeant . indépendant . cotisations et contributions . invalidité et décès',
 	],
 	'protection sociale . famille': [
 		'dirigeant . indépendant . cotisations et contributions . allocations familiales',
-		'dirigeant . indépendant . cotisations et contributions . CSG et CRDS * 0.95 / 9.2',
+		'dirigeant . indépendant . cotisations et contributions . CSG-CRDS * 0.95 / 9.2',
 	],
 	'protection sociale . autres': [
 		'dirigeant . indépendant . cotisations et contributions . contributions spéciales',
-		'dirigeant . indépendant . cotisations et contributions . CSG et CRDS * 2.3 / 9.2',
+		'dirigeant . indépendant . cotisations et contributions . CSG-CRDS * 2.3 / 9.2',
 	],
 	'protection sociale . formation': [
 		'dirigeant . indépendant . cotisations et contributions . formation professionnelle',

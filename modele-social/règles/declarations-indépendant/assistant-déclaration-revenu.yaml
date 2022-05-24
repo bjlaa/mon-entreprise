@@ -855,7 +855,7 @@ DRI . cotisations . assiette des cotisations:
         par défaut: 0
 
 DRI . cotisations . assiette CSG:
-  remplace: dirigeant . indépendant . cotisations et contributions . CSG et CRDS . assiette
+  remplace: dirigeant . indépendant . cotisations et contributions . CSG-CRDS . assiette
   somme:
     - assiette des cotisations
     - déclaration revenus . indépendant . cotisations sociales

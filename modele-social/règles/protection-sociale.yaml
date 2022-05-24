@@ -302,7 +302,7 @@ protection sociale . retraite . complémentaire salarié . points acquis:
   unité: points/mois
   note: |
     On se base sur une valeur constante du point, hors cette dernière change d'année en année, cette valeure est donc une grossière approximation
-  valeur: salarié . retraite complémentaire / valeur d'acquisition
+  valeur: salarié . cotisations . retraite complémentaire / valeur d'acquisition
   références:
     service-public.fr: https://www.service-public.fr/particuliers/vosdroits/F15396
 
@@ -559,7 +559,7 @@ protection sociale . transport:
   description: |
     Cette contribution est reversée intégralement à l'[autorité organisatrice de la mobilité](https://fr.wikipedia.org/wiki/Autorit%C3%A9_organisatrice_de_la_mobilit%C3%A9) de la zone ou est implantée l'entreprise. Celle-ci peut ensuite l'utiliser pour subventionner les transports en commun existants ou pour développer de nouvelles infrastructures de transport (tramway, métro, bus...).
 
-    ## Le versement transport en quelques chiffres
+    ## Le versement mobilité en quelques chiffres
     - **45% de réduction** sur le coût des transports en communs dans les 12 plus grandes agglomérations de France.
     - **263 € / an / habitant** de gain de pouvoir d'achat pour les habitants d'Île-de-France
   références:

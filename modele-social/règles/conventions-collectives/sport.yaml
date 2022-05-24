@@ -12,7 +12,6 @@ salarié . convention collective . sport . cotisations . employeur:
   remplace: salarié . cotisations . employeur
   somme:
     - salarié . cotisations . employeur
-    - prévoyance . employeur
     - financement du paritarisme
 
 salarié . convention collective . sport . cotisations . financement du paritarisme:
@@ -25,58 +24,47 @@ salarié . convention collective . sport . cotisations . financement du paritari
     plancher: 3 €.employé/an / entreprise . effectif
 
 salarié . convention collective . sport . cotisations . prévoyance:
-  remplace:
-    - règle: cotisations . salarié
-      par:
-        somme:
-          - cotisations . salarié
-          - prévoyance . salarié
-    - règle: avantages sociaux
-      par:
-        somme:
-          - prévoyance . employeur
-          - avantages sociaux
-  formule:
-    produit:
-      assiette: cotisations . assiette
+  produit:
+    assiette:
+      valeur: cotisations . assiette
       plafond: 8 * plafond sécurité sociale
-      composantes:
-        - attributs:
-            nom: employeur
-          taux: 0.29%
-        - attributs:
-            nom: salarié
-          taux: 0.29%
+    composantes:
+      - attributs:
+          remplace: cotisations . prévoyances . conventionnelle . employeur
+          nom: employeur
+        taux: 0.29%
+      - attributs:
+          remplace: cotisations . prévoyances . conventionnelle . salarié
+          nom: salarié
+        taux: 0.29%
   références:
     Article 10.8 de la CCNS (IDCC 2511): https://www.legifrance.gouv.fr/affichIDCCArticle.do;?idArticle=KALIARTI000033304755&cidTexte=KALITEXT000017577657&dateTexte=29990101&categorieLien=id
 
 salarié . convention collective . sport . cotisations . régime frais de santé:
-  remplace: salarié . complémentaire santé . forfait
-  formule:
-    produit:
-      assiette: plafond sécurité sociale temps plein
-      taux: taux
+  remplace: cotisations . prévoyances . santé . montant
+  produit:
+    assiette: plafond sécurité sociale temps plein
+    taux: taux
 
 salarié . convention collective . sport . cotisations . régime frais de santé . taux:
-  formule:
-    variations:
-      - si: régime alsace moselle
-        alors:
-          variations:
-            - si: option . R1
-              alors: 0.59%
-            - si: option . R2
-              alors: 0.77%
-            - si: option . R3
-              alors: 0.89%
-      - sinon:
-          variations:
-            - si: option . R1
-              alors: 0.92%
-            - si: option . R2
-              alors: 1.17%
-            - si: option . R3
-              alors: 1.32%
+  variations:
+    - si: régimes spécifiques . alsace moselle
+      alors:
+        variations:
+          - si: option . R1
+            alors: 0.59%
+          - si: option . R2
+            alors: 0.77%
+          - si: option . R3
+            alors: 0.89%
+    - sinon:
+        variations:
+          - si: option . R1
+            alors: 0.92%
+          - si: option . R2
+            alors: 1.17%
+          - si: option . R3
+            alors: 1.32%
   référence:
     unamens.fr: https://www.umanens.fr/reglementation-couverture-sante-obligatoire/ccn-sport
     unamens (notice pdf): https://www.umanens.fr/documents/doc-offres-2018/sport/juin-2019/CCN_SPORT_PLAQ_EMPLOYEUR_2019.pdf
@@ -101,7 +89,7 @@ salarié . convention collective . sport . cotisations . régime frais de santé
   formule: option = 'R3'
 
 salarié . convention collective . sport . cotisations . formation professionnelle:
-  remplace: salarié . formation professionnelle
+  remplace: cotisations . formation professionnelle
   formule:
     somme:
       - plan de formation
@@ -174,10 +162,7 @@ salarié . convention collective . sport . exonération cotisation AT:
     une de ces conditions:
       - joueur entraineur
       - refus
-  remplace:
-    règle: ATMP
-    par: non
-  formule: oui
+  rend non applicable: cotisations . ATMP
 
 salarié . convention collective . sport . exonération cotisation AT . refus:
   titre: refus exonération AT

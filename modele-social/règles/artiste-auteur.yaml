@@ -56,7 +56,6 @@ artiste-auteur . cotisations:
     arrondi: oui
   références:
     Urssaf.fr: https://www.urssaf.fr/portail/home/espaces-dedies/artistes-auteurs-diffuseurs-comm/vous-etes-artiste-auteur/vos-cotisations-et-contributions.html
-
 artiste-auteur . cotisations . assiette:
   description: Les revenus des artistes-auteurs peuvent être catégorisés soit comme des traitements et salaires, soit comme des bénéfices non commerciaux. Les cotisations sociales sont payées sur la somme des revenus de ces deux catégories.
   formule:
@@ -108,11 +107,11 @@ artiste-auteur . cotisations . vieillesse:
       composantes:
         - attributs:
             nom: plafonnée
-          taux: salarié . vieillesse . salarié . plafonnée . taux - 0.75%
+          taux: salarié . cotisations . vieillesse . salarié . plafonnée . taux - 0.75%
           plafond: plafond sécurité sociale temps plein
         - attributs:
             nom: déplafonnée
-          taux: salarié . vieillesse . salarié . déplafonnée . taux - 0.4%
+          taux: salarié . cotisations . vieillesse . salarié . déplafonnée . taux - 0.4%
 
 artiste-auteur . cotisations . CSG-CRDS:
   formule:

@@ -10,9 +10,9 @@ scenarios:
           body: |
             {
               "expressions": [
-                "contrat salarié . prix du travail",
-                "contrat salarié . rémunération . net",
-                "contrat salarié . rémunération . net après impôt"
+                "contrat salarié . total employeur",
+                "contrat salarié . rémunération . net . à payer avant impôt",
+                "contrat salarié . rémunération . net . payé après impôt"
               ],
               "situation": {
                 "dirigeant": "non",

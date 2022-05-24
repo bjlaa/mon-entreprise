@@ -84,7 +84,7 @@ function SalariéSimulationGoals() {
 			toggles={<PeriodSwitch />}
 			legend="Rémunération du salarié"
 		>
-			<SimulationGoal dottedName="salarié . prix du travail" />
+			<SimulationGoal dottedName="salarié . total employeur" />
 			<AidesGlimpse />
 
 			<SimulationGoal dottedName="salarié . contrat . salaire brut" />
@@ -92,9 +92,9 @@ function SalariéSimulationGoals() {
 				small
 				dottedName="salarié . contrat . salaire brut . équivalent temps plein"
 			/>
-			<SimulationGoal dottedName="salarié . rémunération . net" />
+			<SimulationGoal dottedName="salarié . rémunération . net . à payer avant impôt" />
 			<TitreRestaurant />
-			<SimulationGoal dottedName="salarié . rémunération . net après impôt" />
+			<SimulationGoal dottedName="salarié . rémunération . net . payé après impôt" />
 		</SimulationGoals>
 	)
 }

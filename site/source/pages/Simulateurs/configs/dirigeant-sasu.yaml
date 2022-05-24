@@ -1,9 +1,9 @@
 objectifs:
   - dirigeant . rémunération . totale
   - salarié . cotisations
-  - salarié . rémunération . net
+  - salarié . rémunération . net . à payer avant impôt
   - impôt . montant
-  - salarié . rémunération . net après impôt
+  - salarié . rémunération . net . payé après impôt
 
 questions:
   à l'affiche:
@@ -22,8 +22,8 @@ questions:
     - entreprise . effectif
     - établissement . localisation
     - entreprise . ratio alternants
-    - salarié . complémentaire santé
-    - salarié . régime des impatriés
+    - salarié . prévoyance . santé
+    - salarié . régimes spécifiques . impatriés
 
 unité par défaut: €/an
 situation:
@@ -32,4 +32,4 @@ situation:
 
   #TODO : en attendant que la transitivité du remplacement soit implémentée (https://github.com/betagouv/publicodes/issues/55)
   salarié . activité partielle: non
-  salarié . déduction forfaitaire spécifique: non
+  salarié . régimes spécifiques . DFS: non

@@ -41,10 +41,10 @@ salarié . contrat:
       description: |
         Le contrat d'apprentissage est un contrat de travail écrit à durée limitée (CDD) ou à durée indéterminée (CDI) entre un salarié et un employeur. Il permet à l'apprenti de suivre une formation en alternance en entreprise sous la responsabilité d'un maître d'apprentissage et en centre de formation des apprentis (CFA) pendant 1 à 3 ans.
       rend non applicable:
-        - CSG et CRDS
-        - statut cadre
+        - régimes spécifiques . statut cadre
+        - cotisations . CSG-CRDS
         - cotisations . exonérations . JEI
-        - régime des impatriés
+        - régimes spécifiques . impatriés
         - temps de travail . temps partiel
 
     professionnalisation:
@@ -60,7 +60,7 @@ salarié . contrat:
         indéterminée (CDI), la période de professionnalisation proprement-dite
         devant durer entre 6 et 12 mois. Dans certains cas cette période peut être
         prolongée jusqu'à 36 mois.
-      rend non applicable: rémunération . contrôle smic
+      rend non applicable: rémunération . assiette de vérification du SMIC . contrôle
       références:
         Contrat de professionnalisation: https://www.service-public.fr/particuliers/vosdroits/F15478
 
@@ -70,24 +70,25 @@ salarié . contrat:
         Un employeur qui accueille un stagiaire doit lui verser une gratification minimale. Celle-ci est en partie exonérée de cotisations sociales.
       formule: contrat = 'stage'
       rend non applicable:
-        - statut cadre
-        - cotisations . exonérations . JEI
-        - cotisations . exonérations . réduction générale
-        - cotisations . exonérations . lodeom
-        - allocations familiales . taux réduit
-        - maladie . taux employeur . taux réduit
-        - retraite complémentaire
-        - contribution d'équilibre général
-        - chômage
-        - AGS
-        - complémentaire santé
-        - contribution au dialogue social
-        - déduction forfaitaire spécifique
+        - cotisations . exonérations
+        - cotisations . allocations familiales . taux réduit
+        - cotisations . maladie . employeur . taux réduit
+        - cotisations . retraite complémentaire
+        - cotisations . CEG
+        - cotisations . chômage
+        - cotisations . AGS
+        - cotisations . prévoyances . santé
+        - cotisations . contribution au dialogue social
+
         - temps de travail . temps partiel
         - temps de travail . heures supplémentaires
-        - régime des impatriés
-        - rémunération . contrôle smic
-        - salarié . activité partielle
+        - activité partielle
+
+        - régimes spécifiques . statut cadre
+        - régimes spécifiques . DFS
+        - régimes spécifiques . impatriés
+
+        - rémunération . assiette de vérification du SMIC . contrôle
       avec:
         avertissement:
           type: notification
@@ -342,6 +343,8 @@ salarié . contrat . CDD . congés pris:
     la moitié: 50% * congés dus sur la durée du contrat
     aucun: 0 jours ouvrés
   par défaut: congés dus sur la durée du contrat
+  références:
+    A-t-on droit à des congés payés pendant un CDD ?: https://www.service-public.fr/particuliers/vosdroits/F2931
   avec:
     jours ouvrés sur la durée du contrat:
       produit:
@@ -384,19 +387,18 @@ salarié . contrat . salaire brut:
   description: |
     C'est le salaire *brut* régulier inscrit dans le contrat de travail. Il ne change jamais entre les mois et ne peut pas être modifié sans signature des deux parties.
 
-    Il ne comprend pas les indemnités, avantages sociaux, avantages en nature et primes...
+    Il ne comprend pas les indemnités, avantages en nature et primes...
   unité: €/mois
   suggestions:
-    salaire médian: 2300 €/mois
+    salaire médian: 2500 €/mois
     SMIC: temps de travail . SMIC
   inversion numérique:
     question: Quel est le salaire ?
     titre: salaire
     avec:
-      - prix du travail
-      - rémunération . total
-      - rémunération . net
-      - rémunération . net après impôt
+      - total employeur
+      - rémunération . net . à payer avant impôt
+      - rémunération . net . payé après impôt
       - équivalent temps plein
       - dirigeant . rémunération . totale
 

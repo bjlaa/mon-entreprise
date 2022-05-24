@@ -211,7 +211,7 @@ dirigeant . indépendant . PL . cotisations Urssaf:
     dépendance).
   formule:
     somme:
-      - cotisations et contributions . CSG et CRDS
+      - cotisations et contributions . CSG-CRDS
       - cotisations et contributions . maladie
       - cotisations et contributions . allocations familiales
       - cotisations et contributions . formation professionnelle
@@ -1237,6 +1237,7 @@ dirigeant . indépendant . PL . CARMF . ASV:
     abattement: participation CPAM
     arrondi: oui
   références:
+    Taux 2021: http://www.carmf.fr/page.php?page=chiffrescles/stats/2021/taux2021.htm
     Taux 2022: http://www.carmf.fr/page.php?page=chiffrescles/stats/2022/taux2022.htm
 
 dirigeant . indépendant . PL . CARMF . ASV . participation CPAM:
