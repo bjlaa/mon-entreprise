@@ -15,7 +15,13 @@ import { Body } from '@/design-system/typography/paragraphs'
 import { RootState } from '@/reducers/rootReducer'
 import rules, { DottedName } from 'modele-social'
 import { getDocumentationSiteMap, RulePage } from 'publicodes-react'
-import React, { ComponentType, useContext, useMemo } from 'react'
+import React, {
+	ComponentProps,
+	ComponentType,
+	useContext,
+	useMemo,
+	useRef,
+} from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Trans, useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -52,7 +58,7 @@ export default function MonEntrepriseRulePage() {
 				name={documentationSitePaths[pathname]}
 			/>
 			<ScrollToTop key={pathname} />
-			<Grid item md={10}>
+			<Grid item xs={12}>
 				<BackToSimulation />
 				<Spacing xl />
 				<Route path={documentationPath + '/:name+'}>
@@ -69,6 +75,13 @@ function DocumentationPageBody() {
 	const { i18n } = useTranslation()
 	const params = useParams<{ name: string }>()
 
+	const { current: renderers } = useRef({
+		Head: Helmet,
+		Link,
+		Text: Markdown,
+		References,
+	} as ComponentProps<typeof RulePage>['renderers'])
+
 	return (
 		<StyledDocumentation>
 			<RulePage
@@ -76,17 +89,7 @@ function DocumentationPageBody() {
 				rulePath={params.name}
 				engine={engine}
 				documentationPath={documentationPath}
-				renderers={{
-					Head: Helmet as ComponentType<{
-						children: React.ReactNode
-					}>,
-					Link: Link as ComponentType<{
-						to: string
-						children: React.ReactNode
-					}>,
-					Text: Markdown,
-					References,
-				}}
+				renderers={renderers}
 			/>
 		</StyledDocumentation>
 	)
