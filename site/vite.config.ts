@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-
-import replace from '@rollup/plugin-replace'
 import yaml from '@rollup/plugin-yaml'
 import legacy from '@vitejs/plugin-legacy'
 import react from '@vitejs/plugin-react'
@@ -33,15 +30,10 @@ export default defineConfig(({ command, mode }) => ({
 				}
 			},
 		},
-		command === 'build' &&
-			replace({
-				__SENTRY_DEBUG__: false,
-				preventAssignment: false,
-			}),
 		react({
 			babel: { plugins: ['babel-plugin-styled-components'] },
 		}),
-		yaml(),
+		yaml() as any,
 		shimReactPdf(),
 		multipleSPA({
 			defaultSite: 'mon-entreprise',
@@ -109,10 +101,14 @@ export default defineConfig(({ command, mode }) => ({
 			targets: ['defaults', 'not IE 11'],
 		}),
 	],
+	define: {
+		__SENTRY_DEBUG__: command !== 'build',
+	},
 	esbuild: {
 		logOverride: { 'this-is-undefined-in-esm': 'silent' }, // will be fixed in next version of @vitejs/plugin-react (actualy 1.3.2), issue https://github.com/vitejs/vite/pull/8674
 	},
 	server: {
+		port: 3000,
 		hmr: {
 			clientPort:
 				typeof env(mode).HMR_CLIENT_PORT !== 'undefined'
