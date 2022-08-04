@@ -23233,26 +23233,27 @@ __metadata:
 
 "publicodes-react@betagouv/publicodes#head=add-rules-tree-nav&workspace=publicodes-react":
   version: 1.0.0-beta.46
-  resolution: "publicodes-react@https://github.com/betagouv/publicodes.git#workspace=publicodes-react&commit=a6b3689ddf1842c5de9b9e3324e7d2adfa26f621"
+  resolution: "publicodes-react@https://github.com/betagouv/publicodes.git#workspace=publicodes-react&commit=796b3846b4ae0a956db4c2a4dde33ee462e15abf"
   dependencies:
     styled-components: ^5.1.0
   peerDependencies:
     publicodes: 1.0.0-beta.40
     react: ^17 || ^18
-  checksum: 4f510360b0c9d65b214ab90d9a42a78cc1219917a615f347da775334c12592acfa6911626ab97f2f192b7c9436967475730dc6a5730e8f6d521dbc60ba2ade80
+    react-dom: ^17 || ^18
+  checksum: 02707ff17e37985df2cc407de7144d2fa696b80f1f92e1ed139eb24ad9ebb4277fd0b2cf1b8208894cf0756c15c2c5ee5bf531eb956e5e608c2f0d19a33a0eea
   languageName: node
   linkType: hard
 
-"publicodes@npm:=1.0.0-beta.46, publicodes@npm:^1.0.0-beta.46":
+"publicodes@betagouv/publicodes#head=add-rules-tree-nav&workspace=publicodes":
   version: 1.0.0-beta.46
-  resolution: "publicodes@npm:1.0.0-beta.46"
+  resolution: "publicodes@https://github.com/betagouv/publicodes.git#workspace=publicodes&commit=796b3846b4ae0a956db4c2a4dde33ee462e15abf"
   dependencies:
     moo: ^0.5.1
     nearley: ^2.19.2
     yaml: ^1.9.2
   peerDependencies:
     "@types/mocha": ^9.0.0
-  checksum: 22bfcf1ed871a3005c2d2622a991c836531e449288d77c9d9dc900bf30932ea443a638c29bdf813b6fcea51586380808f48cdadcc81976f95e850a32685ef91b
+  checksum: 683179bd34e6b05434e58e4056eb9e2634751c5c26f48bf3594f946921ce55e91d09cc55adbf69cc8a3d332b6b5991996e7ea98b2c079a4f8af71b3825749ef8
   languageName: node
   linkType: hard
 
