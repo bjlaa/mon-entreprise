@@ -18,6 +18,7 @@ questions:
   non prioritaires:
     - salarié . rémunération . frais professionnels
     - salarié . rémunération . avantages en nature
+    - salarié . régimes spécifiques . DFS
     - entreprise . association non lucrative
     - entreprise . non assujettie à TVA
     - salarié . cotisations . exonérations . JEI

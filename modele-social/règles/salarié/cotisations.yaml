@@ -699,7 +699,6 @@ salarié . cotisations . CSG-CRDS . assiette de base:
       barème:
         assiette:
           cotisations . assiette . prévoyance
-
           # - rémunération . revenus de remplacement
 
         multiplicateur: plafond sécurité sociale
